@@ -13,8 +13,10 @@ function App() {
     { id: 2, nombre: 'Camisa React Native', precio: 40 },
     { id: 3, nombre: 'Camisa Node JS', precio: 30 },
     { id: 4, nombre: 'Camisa Next JS', precio: 20 },
-
   ]);
+
+  //State para un carrito de compras
+  const [ carrito, agregarProducto ] = useState([]);
 
   //obtener la fecha
   const fecha = new Date().getFullYear();
@@ -28,6 +30,9 @@ function App() {
         <Producto 
           key={producto.id}
           producto={producto}
+          productos={productos}
+          carrito={carrito}
+          agregarProducto={agregarProducto}
         />
       ))}
 
